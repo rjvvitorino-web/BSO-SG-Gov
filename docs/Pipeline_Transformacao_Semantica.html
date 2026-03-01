@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline de Transformação Semântica - BSO</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 4px solid #c8cbd0;
+        }
+        .header {
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        .header p {
+            margin: 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .workflow {
+            padding: 40px;
+            background: white;
+            position: relative;
+        }
+        .main-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 4px solid #d4e6d4;
+        }
+        .stage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            margin: 0 15px;
+            position: relative;
+        }
+        .icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .icon:hover {
+            transform: scale(1.1);
+        }
+        .pdf-icon {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+        }
+        .llm-icon {
+            background: linear-gradient(45deg, #9b59b6, #8e44ad);
+        }
+        .excel-icon {
+            background: linear-gradient(45deg, #27ae60, #229954);
+        }
+        .protege-icon {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+        }
+        .graphdb-icon {
+            background: linear-gradient(45deg, #e67e22, #d35400);
+        }
+        .stage-title {
+            font-weight: 600;
+            text-align: center;
+            color: #2c3e50;
+            margin: 0 0 8px 0;
+            font-size: 1.1em;
+        }
+        .stage-detail {
+            font-size: 0.8em;
+            color: #666;
+            text-align: center;
+            margin: 0;
+            line-height: 1.2;
+        }
+        .arrow {
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 15px solid #667eea;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            z-index: 2;
+        }
+        .stage:last-child .arrow {
+            display: none;
+        }
+        .etapa-box {
+            background: linear-gradient(135deg, #fff2e6, #ffeedd);
+            color: #8B4513;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(139, 69, 19, 0.2);
+            border: 3px solid #e6ccb3;
+            margin: 20px 0;
+        }
+        .etapa-header {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #8B4513;
+        }
+        .etapa-content {
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+        .pipeline-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+            gap: 20px;
+        }
+        .flow-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            color: white;
+        }
+        .flow-arrow {
+            font-size: 1.5em;
+            color: #8B4513;
+        }
+        .metrics {
+            background: rgba(139, 69, 19, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 0.85em;
+        }
+        .precision-badge {
+            background: #27ae60;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Pipeline de Transformação Semântica</h1>
+            <p>Documentos Estratégicos → Ontologia BSO Formal</p>
+        </div>
+        
+        <div class="workflow">
+            <div class="etapa-box">
+                <div class="etapa-header">Etapa 1: Extração e Estruturação (LLM → Excel)</div>
+                <div class="etapa-content">
+                    <div class="pipeline-flow">
+                        <div class="flow-icon pdf-icon">📄</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-icon llm-icon">🤖</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-icon excel-icon">📊</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="etapa-box">
+                <div class="etapa-header">Etapa 2: Transformação Ontológica (Excel → RDF)</div>
+                <div class="etapa-content">
+                    <div class="pipeline-flow">
+                        <div class="flow-icon excel-icon">📊</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-icon protege-icon">🧠</div>
+                        <div class="flow-arrow">→</div>
+                        <div style="background: #8e44ad; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2em; color: white;">RDF</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="etapa-box">
+                <div class="etapa-header">Etapa 3: Implementação e Validação</div>
+                <div class="etapa-content">
+                    <div class="pipeline-flow">
+                        <div style="background: #8e44ad; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2em; color: white;">RDF</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-icon graphdb-icon">🗄️</div>
+                        <div class="flow-arrow">→</div>
+                        <div style="background: #27ae60; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2em; color: white;">✓</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
