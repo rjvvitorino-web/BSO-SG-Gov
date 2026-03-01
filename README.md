@@ -76,7 +76,7 @@ The ontology is stored in a graph database (GraphDB) enabling complex SPARQL que
 | Visualisation | Power BI (7 levels) | Executive dashboard — strategic performance monitoring |
 | Testing & Validation | Power App | Usability testing, metric collection, feedback |
 
-> Visual workflow diagrams: [`docs/BSO_Technology_Stack.html`](docs/BSO_Technology_Stack.html) · [`docs/Pipeline_Transformacao_Semantica.html`](docs/Pipeline_Transformacao_Semantica.html)
+> Interactive diagrams: [BSO Technology Stack](https://rjvvitorino-web.github.io/BSO-SG-Gov/docs/BSO_Technology_Stack.html) · [Semantic Transformation Pipeline](https://rjvvitorino-web.github.io/BSO-SG-Gov/docs/Pipeline_Transformacao_Semantica.html)
 
 ---
 
@@ -105,15 +105,12 @@ BSO-SG-Gov/
 ├── README.md                          ← This file
 │
 ├── ontology/
-│   ├── bso_sgov.owl                   ← Core BSO ontology (OWL/XML)
-│   ├── bso_sgov.ttl                   ← Turtle serialisation
-│   └── README.md                      ← Ontology structure documentation
+│   └── README.md                      ← Ontology structure and class documentation
+│                                         (OWL/RDF files available on request)
 │
 ├── sparql/
-│   ├── strategic_gaps.rq              ← Query: automated gap detection
-│   ├── causal_network.rq              ← Query: cause-effect validation
-│   ├── indicator_coverage.rq          ← Query: measurement system completeness
-│   └── README.md                      ← Query documentation
+│   └── README.md                      ← SPARQL query catalogue and documentation
+│                                         (query files available on request)
 │
 ├── docs/
 │   ├── BSO_Technology_Stack.html      ← Interactive technology stack diagram
