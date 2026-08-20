@@ -4,6 +4,7 @@
 **Author:** Rui Vitorino · [LinkedIn](https://www.linkedin.com/in/rui-jv-vitorino/) · [Portfolio](https://rjvvitorino-web.github.io)  
 **Grade:** 18.2 / 20  
 **Institution:** Secretaria-Geral do Governo · Presidência do Conselho de Ministros · Portugal
+**Related work:** This implementation was formalized into a peer-reviewed empirical study — see [ICEDEG 2026](https://github.com/rjvvitorino-web/icedeg-2026-bso).
 
 ---
 
@@ -133,6 +134,7 @@ This work is the first output of a research programme at ISCTE-IUL investigating
 | Output | Status |
 |---|---|
 | MSc Thesis — BSO Implementation at SG-Gov | Completed · Nov 2025 · 18.2/20 |
+| [ICEDEG 2026 — Peer-Reviewed Empirical Study](https://github.com/rjvvitorino-web/icedeg-2026-bso) | Accepted · IEEE · Lisbon, 9 Jul 2026 |
 | Systematic Literature Review | In progress · Expected Sep 2026 |
 | PhD Research Outputs — ISCTE-IUL (2025–2029) | Active |
 
